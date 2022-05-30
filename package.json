@@ -1,0 +1,25 @@
+{
+  "name": "-wicodezu-challenge",
+  "version": "1.0.0",
+  "description": "\" we used andela challenge project inorder to train ourselves how to create a full stack application\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wicodeZU/-wicodezu-challenge.git"
+  },
+  "author": "nicholas kipkoech",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wicodeZU/-wicodezu-challenge/issues"
+  },
+  "homepage": "https://github.com/wicodeZU/-wicodezu-challenge#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4",
+    "nodemon": "^2.0.16"
+  }
+}
