@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const articleSchema = mongoose.Schema(
   {
     createdBy: {
-      type: "User",
+      type: ["User"],
       required: true,
     },
     heading: {
