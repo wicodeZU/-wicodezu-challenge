@@ -13,10 +13,12 @@ app.use(express.json());
 
 const adminRouter = require("./api/routes/admin/admin.router");
 const authRouter = require("./api/routes/auth/auth.routes");
+const articleRouter = require("./api/routes/articles/articles.routes");
 /*api endpoints*/
 
 app.use("/api/v1/admin/users", adminRouter);
-app.use("/api/v1/admin/users", authRouter);
+app.use("/api/v1/users", authRouter);
+app.use("/api/v1/articles/", articleRouter);
 
 /**port init */
 
