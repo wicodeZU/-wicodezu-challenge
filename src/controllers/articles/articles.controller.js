@@ -29,3 +29,11 @@ exports.createArticle = async (req, res) => {
     return res.status(500).json({ err });
   }
 };
+exports.getArticles = async (req, res) => {
+  try {
+    const articles = await Article.find({}).exec();
+    return res.json({ articles });
+  } catch (error) {
+    console.log(error);
+  }
+};

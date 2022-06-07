@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
+const User = require("./users");
 const articleSchema = mongoose.Schema(
   {
-    createdBy: {
-      type: mongoose.Types.ObjectId,
-      ref: "User",
+    createdBY: {
+      type: ["User"],
       required: true,
     },
 
