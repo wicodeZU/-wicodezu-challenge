@@ -1,6 +1,5 @@
-const mongoose = require("mongoose")
-const articlesSchema = mongoose.Schema(
-  {
+const mongoose = require("mongoose");
+const articleSchema = mongoose.Schema({
     createdBY: {
       type: ["User"],
       required: true,
@@ -15,7 +14,6 @@ const articlesSchema = mongoose.Schema(
     },
     image: {
       type: String,
-      //required: true,
     },
   },
   { timestamps: true },

@@ -9,3 +9,4 @@ router.route("/create").post(createNewUser)
 router.route("/").get(getUsers)
 
 module.exports = router
+
