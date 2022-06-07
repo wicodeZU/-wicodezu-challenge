@@ -1,18 +1,17 @@
-
-const Article = require("../../schemas/articles");
-const User = require("../../schemas/users");
+const Article = require("../../schemas/articles")
+const User = require("../../schemas/users")
 
 exports.createArticle = async (req, res) => {
-  const { heading, content, image } = req.body;
-  const { userID } = req.params;
-  console.log(userID);
+  const { heading, content, image } = req.body
+  const { userID } = req.params
+  console.log(userID)
   try {
     if (!heading || !content) {
-      return res.status(400).json({ message: "all fields ere required" });
+      return res.status(400).json({ message: "all fields ere required" })
     }
-    const createdBY = await User.findOne({ userID }).exec();
+    const createdBY = await User.findOne({ userID }).exec()
     if (!createdBY) {
-      return res.status(400).json({ message: "user not found" });
+      return res.status(400).json({ message: "user not found" })
     }
     const newArticle = await Article.create({
       createdBY,
@@ -33,14 +32,13 @@ exports.createArticle = async (req, res) => {
 
 exports.getArticles = async (req, res) => {
   try {
-    const articles = await Article.find({}).exec();
-    if(!articles){
-      res.status(400).json({message:"no articles found"})
+    const articles = await Article.find({}).exec()
+    if (!articles) {
+      res.status(400).json({ message: "no articles found" })
     }
-    return res.status(200).json({ articles });
+    return res.status(200).json({ articles })
   } catch (error) {
-    console.log(error);
-    return res.status(500).json(err)
+    console.log(error)
+    return res.status(500).json({ error })
   }
-};
-
+}
