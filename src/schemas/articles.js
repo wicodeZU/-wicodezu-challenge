@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 const articleSchema = mongoose.Schema(
   {
     createdBy: {
-      type: ["User"],
+      type: mongoose.Types.ObjectId,
+      ref: "User",
       required: true,
     },
+
     heading: {
       type: String,
       required: true,

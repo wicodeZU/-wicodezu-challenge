@@ -15,11 +15,26 @@ exports.CreateNewUser = async (req, res) => {
       password,
       image,
     });
+
     if (!newUser)
       return res.status(400).json({ message: "user is not created!!" });
     else {
       await newUser.save();
       return res.status(200).json(newUser);
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json(error);
+  }
+};
+
+exports.getUsers = async (req, res) => {
+  try {
+    const users = await User.find({}).exec();
+    if (!users) {
+      return res.status(400).json({ message: "users not found!!" });
+    } else {
+      return res.status(200).json(users);
     }
   } catch (error) {
     console.log(error);

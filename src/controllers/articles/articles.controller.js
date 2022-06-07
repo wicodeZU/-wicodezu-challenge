@@ -3,12 +3,13 @@ const User = require("../../schemas/users");
 
 exports.createArticle = async (req, res) => {
   const { heading, content, image } = req.body;
-  const id = req.params.id;
+  const { userID } = req.params;
+  console.log(userID);
   try {
     if (!heading || !content) {
       return res.status(400).json({ message: "all fields ere required" });
     }
-    const createdBY = await User.findOne({ _id: id }).exec();
+    const createdBY = await User.findOne({ userID }).exec();
     if (!createdBY) {
       return res.status(400).json({ message: "user not found" });
     }
