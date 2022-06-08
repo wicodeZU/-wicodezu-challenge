@@ -22,3 +22,4 @@ app.use("/api/v1/admin/users", adminRouter)
 const port = process.env.PORT
 
 app.listen(port, () => console.log(`api running on ${port}`))
+

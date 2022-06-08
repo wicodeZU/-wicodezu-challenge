@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const articlesSchema = mongoose.Schema(
+const articleSchema = mongoose.Schema(
   {
     createdBY: {
       type: ["User"],
@@ -15,10 +15,9 @@ const articlesSchema = mongoose.Schema(
     },
     image: {
       type: String,
-      //required: true,
     },
   },
   { timestamps: true },
 )
-const Article = mongoose.model("Article", articlesSchema)
+const Article = mongoose.model("Article", articleSchema)
 module.exports = Article
