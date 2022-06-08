@@ -37,7 +37,7 @@ exports.getArticles = async (req, res) => {
       return res.status(200).json({ articles });
     }
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ error });
   }
 };
 exports.getArticleById = async (req, res) => {
@@ -50,6 +50,6 @@ exports.getArticleById = async (req, res) => {
       return res.status(200).json({ article });
     }
   } catch (error) {
-    console.log(error);
+    return res.status(500).json({ error });
   }
 };
