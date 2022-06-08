@@ -1,13 +1,16 @@
-const express = require("express");
+const express = require("express")
 const {
   createArticle,
   getArticles,
-} = require("../../../controllers/articles/articles.controller");
+  editArticles,
+  deleteArticles,
+} = require("../../../controllers/articles/articles.controller")
 
-const router = express.Router();
+const router = express.Router()
 
-router.route("/create/:userID").post(createArticle);
-router.route("/").get(getArticles);
+router.route("/update/:id").patch(editArticles)
+router.route("/delete/:id").delete(deleteArticles)
+router.route("/create/:userID").post(createArticle)
+router.route("/").get(getArticles)
 
-module.exports = router;
-
+module.exports = router
