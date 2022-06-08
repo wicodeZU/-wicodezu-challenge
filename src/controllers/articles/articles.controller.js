@@ -29,6 +29,41 @@ exports.createArticle = async (req, res) => {
     return res.status(500).json({ err })
   }
 }
+/**
+ * employees to edit articles
+ */
+exports.editArticles = async (req, res) => {
+  const { id } = req.params
+  try {
+    const article = await Article.findOneAndUpdate({ id }, req.body, {
+      new: true,
+    })
+    if (!article) {
+      return res.status(401).json({ message: "could not get the articles" })
+    }
+    await article.save()
+    return res.status(200).json(article)
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json(err)
+  }
+}
+/**
+ * employees to delete articles
+ */
+exports.deleteArticles = async (req, res) => {
+  const { id } = req.params
+  try {
+    const article = await Article.findOneAndRemove({ _id: id }).exec()
+    if (!article) {
+      return res.status(400).json({ message: "no article found" })
+    }
+    return res.status(200).json({ message: "article deleted!", article })
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json(err)
+  }
+}
 
 exports.getArticles = async (req, res) => {
   try {
