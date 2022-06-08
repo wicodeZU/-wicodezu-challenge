@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/wicodeZU/-wicodezu-challenge.git",
-  "author": "Carver <nickey968@gmail.com>",
+  "author": "Carver <nickey968@gmail.com>,<kerenketepela@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "nodemon ./src/index.js"
