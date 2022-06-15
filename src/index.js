@@ -1,25 +1,26 @@
-const express = require("express")
-const dotenv = require("dotenv")
-dotenv.config()
+const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config();
 
 /*init app */
-const app = express()
+const app = express();
 
 // apis
-const adminRouter = require("./api/routes/admin/admin.router")
-const authRouter = require("./api/routes/auth/auth.routes")
-const articleRouter = require("./api/routes/articles/articles.routes")
+const adminRouter = require("./api/routes/admin/admin.router");
+const authRouter = require("./api/routes/auth/auth.routes");
+const articleRouter = require("./api/routes/articles/articles.routes");
+const gifRouter = require("./api/routes/gifs/gif.route");
 /*db init */
-require("./db/db.connect")
+require("./db/db.connect");
 
-app.use(express.json())
+app.use(express.json());
 
 /*api endpoints */
-app.use("/api/v1/articles/", articleRouter)
-app.use("/api/v1/users", authRouter)
-app.use("/api/v1/admin/users", adminRouter)
+app.use("/api/v1/articles/", articleRouter);
+app.use("/api/v1/users", authRouter);
+app.use("/api/v1/admin/users", adminRouter);
+app.use("/api/v1/gifs", gifRouter);
 
-const port = process.env.PORT
+const port = process.env.PORT;
 
-app.listen(port, () => console.log(`api running on ${port}`))
-
+app.listen(port, () => console.log(`api running on ${port}`));
