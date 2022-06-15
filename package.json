@@ -1,8 +1,8 @@
 {
-  "name": "-wicodezu-challenge",
+  "name": "fluffy-disco",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/wicodeZU/-wicodezu-challenge.git",
+  "repository": "https://github.com/Nicholas-Kipkoech/fluffy-disco.git",
   "author": "Carver <nickey968@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -14,6 +14,6 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.3.6"
+    "mongoose": "^6.3.8"
   }
 }
