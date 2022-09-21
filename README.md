@@ -3,6 +3,6 @@
 ### backend
 REST API with NodeJs and Express and using mongoDB as the database
 <br />
-Frontend
-### using ReactJS
+### Frontend
+sing ReactJS
 
